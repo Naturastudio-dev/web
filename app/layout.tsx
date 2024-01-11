@@ -3,7 +3,6 @@ import { Caveat_Brush, Poppins } from "next/font/google";
 import "./globals.css";
 
 const sans = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
-export const handFont = Caveat_Brush({ subsets: ["latin"], weight: ["400"] });
 
 export const metadata: Metadata = {
   title: "Naturastudio",

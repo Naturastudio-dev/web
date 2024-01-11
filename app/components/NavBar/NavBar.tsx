@@ -1,4 +1,3 @@
-import { handFont } from "@/app/layout";
 import { Routes } from "@/constants/routes";
 import Link from "next/link";
 import React from "react";
@@ -6,7 +5,7 @@ import React from "react";
 const NavBar = () => {
   return (
     <nav
-      className={`flex flex-w w-full   uppercase text-light h-20 items-center ${handFont.className}`}
+      className={`flex flex-w w-full   uppercase text-light h-20 items-center `}
     >
       <ul className="hidden sm:flex  w-full justify-around md:justify-center md:gap-10 lg:text-lg flex-1">
         <li>

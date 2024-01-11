@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Caveat_Brush, Poppins } from "next/font/google";
 import "./globals.css";
+import { PoluiProvider } from "pol-ui";
 
 const sans = Poppins({ subsets: ["latin"], weight: ["400", "700"] });
 
@@ -17,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={sans.className}>
-        <div className="bg-light min-h-screen dark:bg-dark text-dark dark:text-light">
-          {children}
-        </div>
+        <PoluiProvider>
+          <div className="bg-light min-h-screen dark:bg-dark text-dark dark:text-light">
+            {children}
+          </div>
+        </PoluiProvider>
       </body>
     </html>
   );

@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <div
-      className="overflow-x-hidden"
+      className="overflow-x-hidden flex flex-col"
       style={{
         backgroundImage: "url('/media/textures/3.jpg')",
         backgroundSize: "cover",
@@ -17,7 +17,9 @@ export default function RootLayout({
       }}
     >
       <NavBar />
-      {children}
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-5xl flex flex-col">{children}</div>
+      </div>
     </div>
   );
 }

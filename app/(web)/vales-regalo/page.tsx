@@ -3,7 +3,7 @@
 import { Button } from "pol-ui";
 import React from "react";
 
-export const vales = [
+const vales = [
   {
     id: 1,
     title: "Sesión de fotos",
@@ -23,7 +23,7 @@ const ValesRegaloPage = () => {
     <div className="flex flex-col gap-8 py-6">
       <h1 className="text-neutral text-3xl text-center">Vales de regalo</h1>
 
-      <ul className="flex flex-col gap-8">
+      <ul className="flex flex-col gap-8 ">
         {vales.map((vale) => {
           return (
             <li key={vale.id} className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -44,11 +44,18 @@ const ValesRegaloPage = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-2 text-center md:text-start">
-                <span className="text-neutral text-3xl">{vale.title}</span>
-                <span className="text-neutral/70">{vale.description}</span>
+              <div className="flex flex-col gap-2 text-center md:text-start justify-around">
+                <div className="flex flex-col">
+                  <span className="text-neutral text-3xl">{vale.title}</span>
+                  <span className="text-neutral/70">{vale.description}</span>
+                </div>
 
-                <Button className=" self-center md:self-start">Comprar</Button>
+                <Button
+                  color="secondary"
+                  className=" self-center md:self-start"
+                >
+                  Comprar
+                </Button>
               </div>
             </li>
           );

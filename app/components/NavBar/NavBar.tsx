@@ -1,38 +1,87 @@
+"use client";
 import { Routes } from "@/constants/routes";
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
-
 const NavBar = () => {
+  const pathname = usePathname();
+  const isActive = (href: string) => {
+    if (pathname === Routes.inicio && href === Routes.inicio) {
+      return true;
+    }
+    if (pathname.includes(href)) {
+      return true;
+    }
+    return false;
+  };
+
   return (
     <nav
-      className={`flex flex-w w-full   uppercase text-light h-20 items-center `}
+      className={`flex flex-w w-full font-hand uppercase text-light  items-center `}
     >
-      <ul className="hidden sm:flex  w-full justify-around md:justify-center md:gap-10 lg:text-lg flex-1">
+      <ul className="hidden sm:flex items-center w-full justify-around md:justify-center md:gap-10 lg:text-xl flex-1">
         <li>
-          <Link href={Routes.inicio}>Inicio</Link>
+          <Link
+            href={Routes.inicio}
+            className={`${isActive(Routes.inicio) ? "font-bold" : ""} `}
+          >
+            Inicio
+          </Link>
         </li>
         <li>
-          <Link href={Routes.sesiones}>Sesiones</Link>
+          <Link
+            href={Routes.sesiones}
+            className={`${isActive(Routes.sesiones) ? "font-bold" : ""} `}
+          >
+            Sesiones
+          </Link>
         </li>
         <li>
-          <Link href={Routes.portfolio}>Portfolio</Link>
+          <Link
+            href={Routes.portfolio}
+            className={`${isActive(Routes.portfolio) ? "font-bold" : ""} `}
+          >
+            Portfolio
+          </Link>
         </li>
         <li>
           <Link
             href={Routes.inicio}
-            className="min-w-[100px] text-center justify-center flex flex-1"
+            className="max-w-[200px] w-full text-center justify-center flex flex-1 overflow-hidden"
           >
-            LOGO
+            <Image
+              src="/logos/logo-blanc.svg"
+              className="h-fit w-full object-cover"
+              width={150}
+              height={50}
+              alt="Logo de Naturastudio"
+            />
           </Link>
         </li>
         <li>
-          <Link href={Routes.valesRegalo}>Vales de regalo</Link>
+          <Link
+            href={Routes.valesRegalo}
+            className={`${isActive(Routes.valesRegalo) ? "font-bold" : ""} `}
+          >
+            Vales de regalo
+          </Link>
         </li>
         <li>
-          <Link href={Routes.sobreMi}>Sobre mi</Link>
+          <Link
+            href={Routes.sobreMi}
+            className={`${isActive(Routes.sobreMi) ? "font-bold" : ""} `}
+          >
+            Sobre mi
+          </Link>
         </li>
         <li>
-          <Link href={Routes.contacto}>Contacto</Link>
+          <Link
+            href={Routes.contacto}
+            className={`${isActive(Routes.contacto) ? "font-bold" : ""} `}
+          >
+            Contacto
+          </Link>
         </li>
       </ul>
 

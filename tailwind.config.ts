@@ -100,6 +100,10 @@ const config: Config = {
         },
       },
     },
+    fontFamily: {
+      sans: ["var(--font-sans)"],
+      hand: ["var(--font-hand)"],
+    },
     keyframes: {
       fadeIn: {
         "0%": { opacity: "0" },

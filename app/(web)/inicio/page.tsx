@@ -14,7 +14,7 @@ const HomePage = () => {
   ];
 
   return (
-    <main className="flex flex-col gap-4   items-center">
+    <main className="flex flex-col gap-4 items-center">
       <p className="w-fit p-12 text-center max-w-[600px] my-8 text-2xl text-light">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim

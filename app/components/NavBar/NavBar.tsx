@@ -24,7 +24,11 @@ const NavBar = () => {
         <li>
           <Link
             href={Routes.inicio}
-            className={`${isActive(Routes.inicio) ? "font-bold" : ""} `}
+            className={`${
+              isActive(Routes.inicio)
+                ? "  bg-primary-300 p- rounded-full p-2"
+                : ""
+            } `}
           >
             Inicio
           </Link>
@@ -42,7 +46,7 @@ const NavBar = () => {
             href={Routes.portfolio}
             className={`${isActive(Routes.portfolio) ? "font-bold" : ""} `}
           >
-            Portfolio
+            Diseño
           </Link>
         </li>
         <li>
@@ -59,14 +63,14 @@ const NavBar = () => {
             />
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             href={Routes.valesRegalo}
             className={`${isActive(Routes.valesRegalo) ? "font-bold" : ""} `}
           >
             Vales de regalo
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             href={Routes.sobreMi}

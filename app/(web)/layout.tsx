@@ -18,7 +18,9 @@ export default function RootLayout({
     >
       <NavBar />
       <div className="w-full flex justify-center">
-        <div className="w-full max-w-5xl flex flex-col">{children}</div>
+        <div className="w-full flex flex-col justify-center items-center">
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -15,7 +15,8 @@ const HomePage = () => {
       <h2 className={`font-hand text-5xl text-white my-8 max-w-xl text-center`}>
         ¿Qué harás con todo este talento que tienes escondido?
       </h2>
-      <p>
+      <p className="text-center max-w-3xl text-white">
+        text totament provisional no tespantis
         {`  En ese momento, inicialmente pensé que no era para tanto, pero su
         interrogante resonó en mí. Mi respuesta fue simple: "Supongo que ponerlo
         en marcha y mostrárselo al mundo ¿No?". Y así lo hice. Al llegar a mi

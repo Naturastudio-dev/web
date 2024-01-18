@@ -124,8 +124,8 @@ const SesionesPage = () => {
                     {s.title}
                   </h2>
                   <ul className="flex flex-col items-center justify-center gap-2 text-xl">
-                    {s.contains.map((c, k) => (
-                      <li key={k}>{c}</li>
+                    {s.contains.map((c) => (
+                      <li key={c}>{c}</li>
                     ))}
                   </ul>
                   <p className="text-3xl">{s.price}</p>

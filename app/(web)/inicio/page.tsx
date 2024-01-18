@@ -16,7 +16,7 @@ const HomePage = () => {
         ¿Qué harás con todo este talento que tienes escondido?
       </h2>
       <p>
-        En ese momento, inicialmente pensé que no era para tanto, pero su
+        {`  En ese momento, inicialmente pensé que no era para tanto, pero su
         interrogante resonó en mí. Mi respuesta fue simple: "Supongo que ponerlo
         en marcha y mostrárselo al mundo ¿No?". Y así lo hice. Al llegar a mi
         estudio, me senté frente al ordenador, reflexionando sobre cómo podría
@@ -37,7 +37,7 @@ const HomePage = () => {
         La marca se convirtió en una extensión de mi conexión con la naturaleza
         y un medio para compartir esa conexión a través de mis imágenes
         congelando esos pequeños instantes vividos. Así empezó esta historia,
-        narrada en pequeños momentos de vida.
+        narrada en pequeños momentos de vida.`}
       </p>
 
       <div className="rounded-3xl overflow-hidden">

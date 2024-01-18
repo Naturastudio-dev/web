@@ -4,7 +4,9 @@ import AutoCarrousel from "./components/AutoCarrousel";
 const HomePage = () => {
   return (
     <main className="flex flex-col gap-4 items-center p-4">
-      <h1 className={`font-hand text-7xl text-white mb-4`}>
+      <h1
+        className={`font-hand text-4xl md:text-7xl text-white mb-4 text-center`}
+      >
         ¿Qué es N.atura Studio?
       </h1>
       <p className="w-fit  text-center max-w-[800px]   text-2xl text-light">
@@ -16,7 +18,7 @@ const HomePage = () => {
         ¿Qué harás con todo este talento que tienes escondido?
       </h2>
       <p className="text-center max-w-3xl text-white">
-        text totament provisional no tespantis
+        text totament provisional no tespantis!!!!!!!!!!!
         {`  En ese momento, inicialmente pensé que no era para tanto, pero su
         interrogante resonó en mí. Mi respuesta fue simple: "Supongo que ponerlo
         en marcha y mostrárselo al mundo ¿No?". Y así lo hice. Al llegar a mi

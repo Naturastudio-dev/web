@@ -19,6 +19,7 @@ const greatFriend = localFont({
 export const metadata: Metadata = {
   title: "Naturastudio",
   description: "Naturastudio",
+  keywords: ["Portafolio", "Naturastudio"],
 };
 
 export default function RootLayout({

@@ -7,7 +7,7 @@ export default function RootLayout({
 }>) {
   return (
     <div
-      className="overflow-x-hidden flex flex-col"
+      className="overflow-x-hidden flex flex-col bg-secondary"
       style={{
         backgroundImage: "url('/media/textures/3.jpg')",
         backgroundSize: "cover",

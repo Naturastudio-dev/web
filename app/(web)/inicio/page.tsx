@@ -1,39 +1,48 @@
 import React from "react";
-import Carousel from "./components/AutoCarrousel";
-import Image from "next/image";
+import AutoCarrousel from "./components/AutoCarrousel";
 
 const HomePage = () => {
-  const images = [
-    "/media/sessions/familiar/1.jpg",
-    "/media/sessions/familiar/2.jpg",
-    "/media/sessions/familiar/3.jpg",
-    "/media/sessions/familiar/4.jpg",
-    "/media/sessions/familiar/5.jpg",
-    "/media/sessions/familiar/6.jpg",
-    "/media/sessions/familiar/7.jpg",
-  ];
-
   return (
-    <main className="flex flex-col gap-4 items-center">
-      <p className="w-fit p-12 text-center max-w-[600px] my-8 text-2xl text-light">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat.
+    <main className="flex flex-col gap-4 items-center p-4">
+      <h1 className={`font-hand text-7xl text-white mb-4`}>
+        ¿Qué es N.atura Studio?
+      </h1>
+      <p className="w-fit  text-center max-w-[800px]   text-2xl text-light">
+        {` Natura Studio empezo en 2019, cuando un amigo me planteó una pregunta
+        que, más tarde, se convertiría en LA pregunta: `}
       </p>
-      <Carousel visibleItemsCount={3} isInfinite>
-        {images.map((i, k) => (
-          <div key={k}>
-            <Image
-              src={i}
-              width={300}
-              height={300}
-              className="max-w-[300px] h-[300px] object-cover w-full"
-              alt="example image"
-            />
-          </div>
-        ))}
-      </Carousel>
+
+      <h2 className={`font-hand text-5xl text-white my-8 max-w-xl text-center`}>
+        ¿Qué harás con todo este talento que tienes escondido?
+      </h2>
+      <p>
+        En ese momento, inicialmente pensé que no era para tanto, pero su
+        interrogante resonó en mí. Mi respuesta fue simple: "Supongo que ponerlo
+        en marcha y mostrárselo al mundo ¿No?". Y así lo hice. Al llegar a mi
+        estudio, me senté frente al ordenador, reflexionando sobre cómo podría
+        crear una marca que expresara todo lo que significa para mí en una sola
+        imagen. Quería que, con solo mirarla, se pudiera percibir todo lo que
+        deseaba transmitir. Revisé todas mis fotos hasta ese momento, y en ese
+        repaso encontré la imagen perfecta que necesitaba para inspirarme por
+        completo. Esta fotografía me transportó a antiguos recuerdos de mi
+        infancia, cuando solía ir a casa de mis abuelos y tomaba unas flores del
+        jardín para mi madre. Aunque mi abuelo las llamara "mala hierba" porque
+        pronto las cortaría para limpiar el jardín, para mí eran un tesoro. Sus
+        colores vibrantes brillaban intensamente al sol, creando los mejores
+        recuerdos de aquellos momentos felices. Desde entonces, comencé a ver y
+        valorar la naturaleza de manera diferente, convirtiéndose en un elemento
+        vital en mi día a día. Desde ese momento, el nombre de mi marca quedó
+        claro: Natura Studio. Representa no solo mi enfoque natural en la
+        fotografía, sino también mi compromiso con la vida natural que me rodea.
+        La marca se convirtió en una extensión de mi conexión con la naturaleza
+        y un medio para compartir esa conexión a través de mis imágenes
+        congelando esos pequeños instantes vividos. Así empezó esta historia,
+        narrada en pequeños momentos de vida.
+      </p>
+
+      <div className="rounded-3xl overflow-hidden">
+        <AutoCarrousel />
+      </div>
     </main>
   );
 };

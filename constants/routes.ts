@@ -1,7 +1,7 @@
 export enum Routes {
   entrada = "/",
   inicio = "/inicio",
-  portfolio = "/portfolio",
+  portfolio = "/portafolio",
   sesiones = "/sesiones",
   valesRegalo = "/vales-regalo",
   contacto = "/contacto",

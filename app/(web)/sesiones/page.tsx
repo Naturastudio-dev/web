@@ -1,3 +1,4 @@
+import { Routes } from "@/constants/routes";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
@@ -131,7 +132,7 @@ const SesionesPage = () => {
                   <p className="text-3xl">{s.price}</p>
 
                   <Link
-                    href="/contacto"
+                    href={Routes.contacto + "?pack=" + s.title}
                     className="text-lime-800 rotate-6 text-2xl hover:scale-105 transition-all duration-300 ease-in-out py-6"
                   >
                     {ctaLabel}

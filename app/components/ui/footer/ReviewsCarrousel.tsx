@@ -122,6 +122,8 @@ const ReviewsCarrousel = () => {
                   </div>
                   <footer className="flex justify-end">
                     <Button
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="bg-primary-100 text-primary-800"
                       href={review.href}
                     >

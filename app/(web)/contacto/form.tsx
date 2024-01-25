@@ -65,9 +65,9 @@ const ContactForm = () => {
             name="contact"
             id="contact"
           >
-            <DropdownItem>Whatsapp</DropdownItem>
-            <DropdownItem>Correo electrónico</DropdownItem>
-            <DropdownItem>Teléfono</DropdownItem>
+            <DropdownItem label="Whatsapp" />
+            <DropdownItem label="Email" />
+            <DropdownItem label="Teléfono" />
           </Dropdown>
         </div>
         <div className="flex flex-col relative gap-2">
@@ -79,10 +79,10 @@ const ContactForm = () => {
             id="conocido"
             className="w-full"
           >
-            <DropdownItem>Google</DropdownItem>
-            <DropdownItem>Redes sociales</DropdownItem>
-            <DropdownItem>Recomendación</DropdownItem>
-            <DropdownItem>Otro</DropdownItem>
+            <DropdownItem label="Google" />
+            <DropdownItem label="Redes Sociales" />
+            <DropdownItem label="Amigos" />
+            <DropdownItem label="Otros" />
           </Dropdown>
         </div>
       </div>

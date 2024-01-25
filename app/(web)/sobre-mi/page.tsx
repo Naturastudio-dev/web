@@ -62,7 +62,6 @@ const SobreMiPage = () => {
   return (
     <main>
       <WordCloud />
-
       <Footer />
     </main>
   );

@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 import { ParallaxImage } from "./ParallaxImage";
 import { projects } from "@/data/projects";
 
-const DesignPage = () => {
+const PortafolioPage = () => {
   return (
     <ul className="w-full ">
       {projects.map((project, i) => {
@@ -44,4 +44,4 @@ const DesignPage = () => {
   );
 };
 
-export default DesignPage;
+export default PortafolioPage;

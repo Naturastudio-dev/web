@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-import { PoluiProvider } from "pol-ui";
 import localFont from "next/font/local";
-import ScrollContainer from "@/components/ui/ScrollContainer";
 import { Providers } from "./providers";
 
 const sans = Montserrat({

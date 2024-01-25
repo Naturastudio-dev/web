@@ -1,7 +1,7 @@
 import Footer from "@/app/components/ui/footer/footer";
 import React from "react";
 
-export const WordCloud = () => {
+const WordCloud = () => {
   const importance3 = [
     "apasionada",
     "sensible",

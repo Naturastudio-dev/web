@@ -5,7 +5,7 @@ import { ParallaxBanner, ParallaxBannerLayer } from "react-scroll-parallax";
 import ReviewsCarrousel from "./ReviewsCarrousel";
 
 const bgImage = "/media/textures/fons_retallat.jpg";
-const ParallaxComponent = () => {
+export const ParallaxComponent = ({ bgImage }: { bgImage: string }) => {
   return (
     <ParallaxBanner
       style={{
@@ -36,7 +36,7 @@ const Footer = () => {
 
       <ReviewsCarrousel />
       <div className="relative">
-        <ParallaxComponent />
+        <ParallaxComponent bgImage={bgImage} />
         <div className="absolute bottom-0 left-0 inset-0 bg-gradient-to-t to-30% from-[#050401] w-full h-full z-10" />
         <div className="absolute top-0 left-0 inset-0 bg-gradient-to-b to-50% from-primary w-full h-full z-10  " />
       </div>

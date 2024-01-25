@@ -86,7 +86,7 @@ _____________________________________________________
         </Link>
         {isActive ? (
           <motion.div
-            className="absolute -bottom-2 left-0 h-2 bg-light w-full p-1  rounded-full"
+            className="absolute -bottom-2 left-0 h-1 bg-light w-full p-1  rounded-full"
             layoutId="underline"
           />
         ) : null}

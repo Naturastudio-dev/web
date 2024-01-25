@@ -1,3 +1,4 @@
+import Footer from "@/app/components/ui/footer/footer";
 import React from "react";
 
 export const WordCloud = () => {
@@ -59,9 +60,11 @@ export const WordCloud = () => {
 
 const SobreMiPage = () => {
   return (
-    <div>
+    <main>
       <WordCloud />
-    </div>
+
+      <Footer />
+    </main>
   );
 };
 

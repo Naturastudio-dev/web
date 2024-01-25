@@ -1,3 +1,4 @@
+import { Footer } from "pol-ui";
 import NavBar from "../components/NavBar/NavBar";
 
 export default function RootLayout({

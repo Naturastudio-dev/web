@@ -3,6 +3,8 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import { PoluiProvider } from "pol-ui";
 import localFont from "next/font/local";
+import ScrollContainer from "@/components/ui/ScrollContainer";
+import { Providers } from "./providers";
 
 const sans = Montserrat({
   subsets: ["latin"],
@@ -30,11 +32,7 @@ export default function RootLayout({
   return (
     <html lang="es" className={`${sans.variable} ${greatFriend.variable}`}>
       <body>
-        <PoluiProvider>
-          <div className="bg-light min-h-screen dark:bg-dark text-dark dark:text-light">
-            {children}
-          </div>
-        </PoluiProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

@@ -8,22 +8,7 @@ const config: Config = {
   ],
 
   darkMode: "class",
-  extend: {
-    keyframes: {
-      "accordion-down": {
-        from: { height: "0" },
-        to: { height: "var(--radix-accordion-content-height)" },
-      },
-      "accordion-up": {
-        from: { height: "var(--radix-accordion-content-height)" },
-        to: { height: "0" },
-      },
-    },
-    animation: {
-      "accordion-down": "accordion-down 0.2s ease-out",
-      "accordion-up": "accordion-up 0.2s ease-out",
-    },
-  },
+
   theme: {
     extend: {
       colors: {
@@ -115,24 +100,34 @@ const config: Config = {
           900: "#0F4251",
         },
       },
-    },
-    fontFamily: {
-      sans: ["var(--font-sans)"],
-      hand: ["var(--font-hand)"],
-    },
-    keyframes: {
-      fadeIn: {
-        "0%": { opacity: "0" },
-        "100%": { opacity: "1" },
+      fontFamily: {
+        sans: ["var(--font-sans)"],
+        hand: ["var(--font-hand)"],
       },
-      rotate: {
-        "0%": { transform: "rotate(0deg)" },
-        "100%": { transform: "rotate(360deg)" },
+      keyframes: {
+        "accordion-down": {
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
+        },
+        "accordion-up": {
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
+        },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        rotate: {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
       },
-    },
-    animation: {
-      "fade-in": "fadeIn 200ms ease-in-out",
-      rotate: "rotate 1s linear infinite",
+      animation: {
+        "fade-in": "fadeIn 200ms ease-in-out",
+        rotate: "rotate 1s linear infinite",
+        "accordion-down": "accordion-down 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
+      },
     },
   },
 };

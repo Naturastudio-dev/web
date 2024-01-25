@@ -1,9 +1,10 @@
 import React from "react";
 import AutoCarrousel from "./components/AutoCarrousel";
+import Footer from "@/components/ui/footer/footer";
 
 const HomePage = () => {
   return (
-    <main className="flex flex-col gap-4 items-center p-4">
+    <main className="flex flex-col gap-4 items-center ">
       <h1
         className={`font-hand text-4xl md:text-7xl text-white mb-4 text-center`}
       >
@@ -46,6 +47,8 @@ const HomePage = () => {
       <div className="rounded-3xl overflow-hidden">
         <AutoCarrousel />
       </div>
+
+      <Footer />
     </main>
   );
 };

@@ -9,7 +9,7 @@ export const ParallaxImage = ({ bgImage }: { bgImage: string }) => {
         height: 900,
       }}
     >
-      <ParallaxBannerLayer speed={30}>
+      <ParallaxBannerLayer speed={-40}>
         <div
           // style="background-image: url(/media/textures/fons.jpg)"
           style={{ backgroundImage: `url(${bgImage})` }}

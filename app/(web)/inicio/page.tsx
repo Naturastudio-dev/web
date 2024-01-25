@@ -1,6 +1,6 @@
 import React from "react";
 import AutoCarrousel from "./components/AutoCarrousel";
-import Footer from "@/components/ui/footer/footer";
+import Footer from "@/app/components/ui/footer/footer";
 
 const HomePage = () => {
   return (

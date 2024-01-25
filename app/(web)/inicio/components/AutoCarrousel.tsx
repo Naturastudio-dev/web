@@ -1,13 +1,13 @@
 "use client";
 
+import Image from "next/image";
+import React from "react";
+import Autoplay from "embla-carousel-autoplay";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-} from "@/components/ui/carousel";
-import Image from "next/image";
-import React from "react";
-import Autoplay from "embla-carousel-autoplay";
+} from "@/app/components/ui/carousel";
 
 const AutoCarrousel = () => {
   const images = [

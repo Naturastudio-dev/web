@@ -25,8 +25,7 @@ const ReviewsCarrousel = () => {
       stars: 5,
       review:
         "Hem fet una sessió de fotos familiars i l’experiència ha estat fantàstica! El tracte ha estat fabulós, des del minut 1 ens ha donat molta confiança i ens ha fet sentir molt còmodes...",
-      avatar:
-        "https://lh3.googleusercontent.com/a-/ALV-UjXacRXSaGUE-APYKZ5ZEZpSlzIuQyjCwphTt8dZYTSmqg=w60-h60-p-rp-mo-br100",
+      avatar: "/media/avatars/meritxell.png",
       href: "https://maps.app.goo.gl/1DeScViyVoWRPrjTA",
     },
     {
@@ -34,8 +33,8 @@ const ReviewsCarrousel = () => {
       stars: 5,
       review:
         "Experiència totalment recomanable, amb ganes de tornar-ho a repetir. Molt detallista i professional. M'he sentit molt a gust!",
-      avatar:
-        "https://lh3.googleusercontent.com/a-/ALV-UjVw2xNUK0b2asu0Vv39n3h3Dq3bU3REKSrLSJCJV1M0UTo=w60-h60-p-rp-mo-br100",
+      avatar: "/media/avatars/estel.png",
+
       href: "https://maps.app.goo.gl/RC5L3RydCgxUrgzGA",
     },
     {
@@ -43,8 +42,8 @@ const ReviewsCarrousel = () => {
       stars: 5,
       review:
         "La calidad y edición de las fotos es muy buena! Y el trato excelente, muy profesional, perfeccionista y detallista!✨",
-      avatar:
-        "https://lh3.googleusercontent.com/a-/ALV-UjXLJdBYXypFglq4l39ns4Z6rJ4iYHugmUuTAENKodVZnX3a=w60-h60-p-rp-mo-br100",
+      avatar: "/media/avatars/iratxe.png",
+
       href: "https://maps.app.goo.gl/PtuZbULtcKJke14aA",
     },
     {
@@ -52,8 +51,8 @@ const ReviewsCarrousel = () => {
       stars: 5,
       review:
         "Gran professional i molt bones fotografies! M'ha encantat el tracte personal i el resultat.",
-      avatar:
-        "https://lh3.googleusercontent.com/a-/ALV-UjV71u90CllJgs0CRh3WbdG_5R5cslQ-IEW1oM8Px7W1GCk=w60-h60-p-rp-mo-br100",
+      avatar: "/media/avatars/oriol.png",
+
       href: "https://maps.app.goo.gl/AJoTJCEqB44nkp24A",
     },
     {
@@ -61,8 +60,8 @@ const ReviewsCarrousel = () => {
       stars: 5,
       review:
         "Ha sigut fantàstic! Molt professional i i les fotos han quedat xulíssimes!!😍 …",
-      avatar:
-        "https://lh3.googleusercontent.com/a-/ALV-UjUOWMrSC3MY5vYOSBWieWfwiSIbCl3FHYvsBe4PgUciwQ=w60-h60-p-rp-mo-br100",
+      avatar: "/media/avatars/julia.png",
+
       href: "https://maps.app.goo.gl/EYBnhnUQBiZZQLus6",
     },
   ];
@@ -79,32 +78,35 @@ const ReviewsCarrousel = () => {
           loop: true,
         }}
       >
-        <CarouselContent className="cursor-grab	">
+        <CarouselContent className="cursor-grab">
           {reviews.map((review, i) => {
             const randomTexture = Math.floor(Math.random() * 5);
             return (
               <CarouselItem
                 key={i}
-                className="lg:basis-1/2 p-16 max-w-[90vw] mx-auto"
+                className="lg:basis-1/2 max-w-[90vw] mx-auto"
               >
                 <div
                   className="bg-primary-200 h-full rounded-3xl p-8 justify-between flex flex-col items-stretch bg-center bg-no-repeat bg-cover shadow-xl bg-blend-multiply "
                   style={{
                     backgroundImage: `url(/media/textures/${randomTexture}.jpg)`,
+                    backgroundBlendMode: "overlay",
                   }}
                 >
                   <div className="flex flex-col gap-2">
-                    <header className="flex gap-4 items-center">
+                    <header className="flex gap-4 items-center flex-col md:flex-row ">
                       <Image
+                        placeholder="blur"
                         src={review.avatar}
+                        blurDataURL={review.avatar}
                         width={60}
                         height={60}
-                        className="w-[60px] h-[60px] object-cover rounded-3xl aspect-square"
+                        className="w-[60px] h-[60px] object-cover aspect-square rounded-full"
                         alt="example image"
                       />
-                      <div className="flex flex-col">
+                      <div className="flex flex-col items-center md:items-start">
                         <p className="text-lg font-bold">{review.name}</p>
-                        <div className="flex gap-1 bg-primary/30 rounded-full p-1 w-fit">
+                        <div className="flex gap-1 bg-primary/30 rounded-full p-1 w-fit justify-center">
                           {Array(review.stars)
                             .fill(0)
                             .map((_, i) => (
@@ -116,7 +118,7 @@ const ReviewsCarrousel = () => {
                       </div>
                     </header>
 
-                    <p className="text-dark text-lg px-8 py-4 text-balance">
+                    <p className="text-dark text-lg md:px-8 py-2 md:py-4 text-balance">
                       {review.review}
                     </p>
                   </div>

@@ -27,11 +27,18 @@ const Footer = () => {
   const thisYear = new Date().getFullYear();
   return (
     <section className="w-full relative text-center ">
+      <header className="flex flex-col gap-1 justify-center px-8 ">
+        <h3 className="text-4xl md:text-5xl text-white pt-10">Reviews</h3>
+        <p className="text-center text-light text-xl pb-6  ">
+          Estas son algunas de las reseñas que han dejado mis clientes.
+        </p>
+      </header>
+
       <ReviewsCarrousel />
       <div className="relative">
         <ParallaxComponent />
-        <div className="absolute bottom-0 left-0 inset-0 bg-gradient-to-t to-30% from-[#050401] w-screen h-full z-10" />
-        <div className="absolute top-0 left-0 inset-0 bg-gradient-to-b to-50% from-primary w-screen h-full z-10  " />
+        <div className="absolute bottom-0 left-0 inset-0 bg-gradient-to-t to-30% from-[#050401] w-full h-full z-10" />
+        <div className="absolute top-0 left-0 inset-0 bg-gradient-to-b to-50% from-primary w-full h-full z-10  " />
       </div>
       <div className=" bg-[#050401] pb-[500px] text-white">
         <div className="flex flex-col gap-1 justify-center items-center">

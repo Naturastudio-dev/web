@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import { motion } from "framer-motion";
 const NavBar = () => {
   const pathname = usePathname();
   const isActive = (href: string) => {
@@ -35,39 +36,79 @@ More info at https://polgubau.com
 _____________________________________________________
 `);
 
+  const links = [
+    {
+      name: "Inicio",
+      href: Routes.inicio,
+    },
+    {
+      name: "Sesiones",
+      href: Routes.sesiones,
+    },
+    {
+      name: "Diseño",
+      href: Routes.portfolio,
+    },
+    {
+      name: "Sobre mi",
+      href: Routes.sobreMi,
+    },
+    {
+      name: "Contacto",
+      href: Routes.contacto,
+    },
+  ];
+  const navDividedInHalf = links.length / 2;
+
+  const [firstHalf, secondHalf] = [
+    links.slice(0, navDividedInHalf),
+    links.slice(navDividedInHalf, links.length),
+  ];
+
+  const NavLink = ({
+    href,
+    children,
+    isActive,
+  }: {
+    href: string;
+    children: React.ReactNode;
+    isActive: boolean;
+  }) => {
+    return (
+      <motion.li key={href} className="relative">
+        <Link
+          href={href}
+          className={`${
+            isActive ? "text-light" : "text-light/80"
+          } hover:text-primary-300`}
+        >
+          {children}
+        </Link>
+        {isActive ? (
+          <motion.div
+            className="absolute -bottom-2 left-0 h-2 bg-light w-full p-1  rounded-full"
+            layoutId="underline"
+          />
+        ) : null}
+      </motion.li>
+    );
+  };
+
   return (
     <nav
       className={`flex flex-w w-full font-hand uppercase text-light  items-center `}
     >
       <ul className="hidden sm:flex items-center w-full justify-around md:justify-center md:gap-10 lg:text-xl flex-1">
-        <li>
-          <Link
-            href={Routes.inicio}
-            className={`${
-              isActive(Routes.inicio)
-                ? "  bg-primary-300 p- rounded-full p-2"
-                : ""
-            } `}
+        {firstHalf.map((link) => (
+          <NavLink
+            key={link.href}
+            href={link.href}
+            isActive={isActive(link.href)}
           >
-            Inicio
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={Routes.sesiones}
-            className={`${isActive(Routes.sesiones) ? "font-bold" : ""} `}
-          >
-            Sesiones
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={Routes.portfolio}
-            className={`${isActive(Routes.portfolio) ? "font-bold" : ""} `}
-          >
-            Diseño
-          </Link>
-        </li>
+            {link.name}
+          </NavLink>
+        ))}
+
         <li>
           <Link
             href={Routes.inicio}
@@ -82,30 +123,15 @@ _____________________________________________________
             />
           </Link>
         </li>
-        {/* <li>
-          <Link
-            href={Routes.valesRegalo}
-            className={`${isActive(Routes.valesRegalo) ? "font-bold" : ""} `}
+        {secondHalf.map((link) => (
+          <NavLink
+            key={link.href}
+            href={link.href}
+            isActive={isActive(link.href)}
           >
-            Vales de regalo
-          </Link>
-        </li> */}
-        <li>
-          <Link
-            href={Routes.sobreMi}
-            className={`${isActive(Routes.sobreMi) ? "font-bold" : ""} `}
-          >
-            Sobre mi
-          </Link>
-        </li>
-        <li>
-          <Link
-            href={Routes.contacto}
-            className={`${isActive(Routes.contacto) ? "font-bold" : ""} `}
-          >
-            Contacto
-          </Link>
-        </li>
+            {link.name}
+          </NavLink>
+        ))}
       </ul>
 
       <li className="flex sm:hidden w-full justify-center">
@@ -113,7 +139,13 @@ _____________________________________________________
           href={Routes.inicio}
           className="min-w-[100px] text-center justify-center flex flex-1"
         >
-          LOGO
+          <Image
+            alt="Naturastudio logo"
+            src="/logos/logo-blanc.svg"
+            width={100}
+            height={50}
+            className="w-full h-auto max-w-[100px] "
+          />
         </Link>
       </li>
     </nav>

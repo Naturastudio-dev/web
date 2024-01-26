@@ -6,7 +6,7 @@ export const ParallaxImage = ({ bgImage }: { bgImage: string }) => {
   return (
     <ParallaxBanner
       style={{
-        height: 900,
+        height: 600,
       }}
     >
       <ParallaxBannerLayer speed={-40}>

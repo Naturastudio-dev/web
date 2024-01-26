@@ -43,14 +43,14 @@ const DesignPage = ({
             className="w-full rounded-t-3xl"
             height={500}
           />
-          <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] ">
+          <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))]">
             {otherImages.map((image) => (
               <Image
                 key={image}
                 alt={`Imagen de portada de ${projectSelected.title}`}
                 src={`/portafolio/${projectSelected.id}/${image}`}
                 width={500}
-                className="flex flex-1 object-cover h-[300px] bg-primary"
+                className="flex flex-1 object-cover h-[300px] bg-light"
                 height={300}
               />
             ))}

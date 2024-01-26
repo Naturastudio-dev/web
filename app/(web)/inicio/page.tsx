@@ -6,31 +6,39 @@ const HomePage = () => {
   return (
     <main className="flex flex-col gap-4 items-center ">
       <h1
-        className={`font-hand text-4xl md:text-7xl text-white mb-4 text-center`}
+        className={`font-hand text-4xl md:text-7xl text-white mb-3 text-center`}
       >
         ¿Qué es N.atura Studio?
       </h1>
-      <p className="w-fit  text-center max-w-[800px]   text-2xl text-light">
-        {` Natura Studio empezo en 2019, cuando un amigo me planteó una pregunta
-        que, más tarde, se convertiría en LA pregunta: `}
+      <p className="w-fit  text-center max-w-[800px]   text-xl text-light">
+        Natura Studio empezo en 2019, cuando un amigo me planteó una pregunta
+        que, más tarde, se convertiría en la pregunta:
       </p>
 
       <h2 className={`font-hand text-5xl text-white my-8 max-w-xl text-center`}>
         ¿Qué harás con todo este talento que tienes escondido?
       </h2>
+
       <p className="text-center max-w-3xl text-white">
-        text totament provisional no tespantis!!!!!!!!!!!
-        {`  En ese momento, inicialmente pensé que no era para tanto, pero su
-        interrogante resonó en mí. Mi respuesta fue simple: "Supongo que ponerlo
-        en marcha y mostrárselo al mundo ¿No?". Y así lo hice. Al llegar a mi
-        estudio, me senté frente al ordenador, reflexionando sobre cómo podría
-        crear una marca que expresara todo lo que significa para mí en una sola
-        imagen. Quería que, con solo mirarla, se pudiera percibir todo lo que
-        deseaba transmitir. Revisé todas mis fotos hasta ese momento, y en ese
-        repaso encontré la imagen perfecta que necesitaba para inspirarme por
-        completo. Esta fotografía me transportó a antiguos recuerdos de mi
-        infancia, cuando solía ir a casa de mis abuelos y tomaba unas flores del
-        jardín para mi madre. Aunque mi abuelo las llamara "mala hierba" porque
+        text totament provisional no tespantis!!!!!!!!!!! En ese momento,
+        inicialmente pensé que no era para tanto, pero su interrogante resonó en
+        mí. Mi respuesta fue simple: Supongo que ponerlo en marcha y mostrárselo
+        al mundo ¿No?. Y así lo hice. Al llegar a mi estudio, me senté frente al
+        ordenador, reflexionando sobre cómo podría crear una marca que expresara
+        todo lo que significa para mí en una sola imagen. Quería que, con solo
+        mirarla, se pudiera percibir todo lo que deseaba transmitir. Revisé
+        todas mis fotos hasta ese momento, y en ese repaso encontré la imagen
+        perfecta que necesitaba para inspirarme por completo. Esta fotografía me
+        transportó a antiguos recuerdos de mi infancia, cuando solía ir a casa
+        de mis abuelos y tomaba unas flores del jardín para mi madre.
+      </p>
+
+      <div className="rounded-3xl overflow-hidden">
+        <AutoCarrousel />
+      </div>
+
+      <p>
+        {`Aunque mi abuelo las llamara "mala hierba" porque
         pronto las cortaría para limpiar el jardín, para mí eran un tesoro. Sus
         colores vibrantes brillaban intensamente al sol, creando los mejores
         recuerdos de aquellos momentos felices. Desde entonces, comencé a ver y
@@ -43,10 +51,6 @@ const HomePage = () => {
         congelando esos pequeños instantes vividos. Así empezó esta historia,
         narrada en pequeños momentos de vida.`}
       </p>
-
-      <div className="rounded-3xl overflow-hidden">
-        <AutoCarrousel />
-      </div>
 
       <Footer />
     </main>

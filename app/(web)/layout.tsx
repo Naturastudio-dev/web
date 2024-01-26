@@ -1,4 +1,3 @@
-import { Footer } from "pol-ui";
 import NavBar from "../components/NavBar/NavBar";
 
 export default function RootLayout({
@@ -7,21 +6,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div
-      className="overflow-x-hidden flex flex-col bg-secondary"
-      style={{
-        backgroundImage: "url('/media/textures/3.jpg')",
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "repeat",
-        minHeight: "100vh",
-      }}
-    >
+    <div className="overflow-x-hidden flex flex-col bg-secondary">
       <NavBar />
-      <div className="w-full flex justify-center">
-        <div className="w-full flex flex-col justify-center items-center">
-          {children}
-        </div>
+      <div className="w-full flex flex-col justify-center items-center">
+        {children}
       </div>
     </div>
   );

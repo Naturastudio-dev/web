@@ -8,6 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/app/components/ui/carousel";
+import { Conveyor } from "pol-ui";
 
 const AutoCarrousel = () => {
   const images = [
@@ -21,31 +22,43 @@ const AutoCarrousel = () => {
   ];
 
   return (
-    <Carousel
-      plugins={[
-        Autoplay({
-          delay: 2000,
-        }),
-      ]}
-      opts={{
-        align: "start",
-        loop: true,
-      }}
-    >
-      <CarouselContent className="-ml-4">
-        {images.map((i, k) => (
-          <CarouselItem key={k} className="md:basis-1/2 lg:basis-1/3 pl-4">
-            <Image
-              src={i}
-              width={400}
-              height={400}
-              className="w-full h-[400px] object-cover rounded-3xl "
-              alt="example image"
-            />
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    // <Carousel
+    //   plugins={[
+    //     Autoplay({
+    //       delay: 2000,
+    //     }),
+    //   ]}
+    //   opts={{
+    //     align: "start",
+    //     loop: true,
+    //   }}
+    // >
+    //   <CarouselContent className="-ml-4">
+    //     {images.map((i, k) => (
+    //       <CarouselItem key={k} className="md:basis-1/4 lg:basis-[15%]  pl-4">
+    //         <Image
+    //           src={i}
+    //           width={400}
+    //           height={400}
+    //           className="w-full h-[400px] object-cover rounded-3xl "
+    //           alt="example image"
+    //         />
+    //       </CarouselItem>
+    //     ))}
+    //   </CarouselContent>
+    // </Carousel>
+    <Conveyor speed="slow" pauseOnHover={false}>
+      {images.map((i, k) => (
+        <Image
+          key={k}
+          src={i}
+          width={400}
+          height={400}
+          alt={"example image"}
+          className="w-full h-[400px] object-cover rounded-3xl "
+        />
+      ))}
+    </Conveyor>
   );
 };
 

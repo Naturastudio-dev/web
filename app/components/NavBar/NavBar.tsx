@@ -5,6 +5,37 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
 import { motion } from "framer-motion";
+const NavLink = ({
+  href,
+  children,
+  isActive,
+  imageUrl,
+}: {
+  href: string;
+  children: React.ReactNode;
+  isActive: boolean;
+  imageUrl: string;
+}) => {
+  const MotionImage = motion(Image);
+  return (
+    <motion.li key={href} className="relative group p-4">
+      <Link
+        href={href}
+        className={` z-10 ${isActive ? "text-light" : "text-light/80"} z-20 `}
+      >
+        {children}
+      </Link>
+
+      <MotionImage
+        src={imageUrl}
+        alt=""
+        height={50}
+        width={100}
+        className="absolute h-full w-full top-0 left-0 object-contain pointer-events-none invert hidden group-hover:flex transition-all"
+      />
+    </motion.li>
+  );
+};
 const NavBar = () => {
   const pathname = usePathname();
   const isActive = (href: string) => {
@@ -40,22 +71,27 @@ _____________________________________________________
     {
       name: "Inicio",
       href: Routes.inicio,
+      hoverImage: "/media/subrallat/1.png",
     },
     {
       name: "Sesiones",
       href: Routes.sesiones,
+      hoverImage: "/media/subrallat/2.png",
     },
     {
       name: "Diseño",
       href: Routes.portfolio,
+      hoverImage: "/media/subrallat/3.png",
     },
     {
       name: "Sobre mi",
       href: Routes.sobreMi,
+      hoverImage: "/media/subrallat/4.png",
     },
     {
       name: "Contacto",
       href: Routes.contacto,
+      hoverImage: "/media/subrallat/5.png",
     },
   ];
   const navDividedInHalf = links.length / 2;
@@ -65,35 +101,6 @@ _____________________________________________________
     links.slice(navDividedInHalf, links.length),
   ];
 
-  const NavLink = ({
-    href,
-    children,
-    isActive,
-  }: {
-    href: string;
-    children: React.ReactNode;
-    isActive: boolean;
-  }) => {
-    return (
-      <motion.li key={href} className="relative">
-        <Link
-          href={href}
-          className={`${
-            isActive ? "text-light" : "text-light/80"
-          } hover:text-primary-300`}
-        >
-          {children}
-        </Link>
-        {isActive ? (
-          <motion.div
-            className="absolute -bottom-2 left-0 h-1 bg-light w-full p-1  rounded-full"
-            layoutId="underline"
-          />
-        ) : null}
-      </motion.li>
-    );
-  };
-
   return (
     <nav
       className={`flex flex-w w-full font-hand uppercase text-light  items-center `}
@@ -101,6 +108,7 @@ _____________________________________________________
       <ul className="hidden sm:flex items-center w-full justify-around md:justify-center md:gap-10 lg:text-xl flex-1">
         {firstHalf.map((link) => (
           <NavLink
+            imageUrl={link.hoverImage}
             key={link.href}
             href={link.href}
             isActive={isActive(link.href)}
@@ -126,6 +134,7 @@ _____________________________________________________
         {secondHalf.map((link) => (
           <NavLink
             key={link.href}
+            imageUrl={link.hoverImage}
             href={link.href}
             isActive={isActive(link.href)}
           >

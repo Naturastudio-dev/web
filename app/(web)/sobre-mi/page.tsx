@@ -60,7 +60,7 @@ const WordCloud = () => {
 
 const SobreMiPage = () => {
   return (
-    <main>
+    <main className="flex flex-col justify-center items-center">
       <WordCloud />
       <Footer />
     </main>

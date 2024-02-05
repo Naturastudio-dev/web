@@ -38,15 +38,16 @@ const SesionesPage = () => {
                 isOdd ? "bg-red-200" : ""
               )}
             >
-              <Image
-                src={s.cover}
-                alt={s.title}
-                width={400}
-                height={500}
-                className="h-auto border border-red-600 border-dotted object-contain "
-              />
+              <Link href={Routes.contacto + "?pack=" + s.title}>
+                <Image
+                  src={s.cover}
+                  alt={s.title}
+                  width={400}
+                  height={600}
+                  className="h-auto border border-red-600 border-dotted object-contain "
+                />
+              </Link>
               <div
-                className="flex flex-col gap-2 relative p-8"
                 style={{
                   backgroundImage: "url('/media/packs/llibreta-packs.png')",
                   backgroundPosition: "center",
@@ -54,24 +55,29 @@ const SesionesPage = () => {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <div className="px-8 font-hand flex flex-col justify-between h-full text-normal ">
-                  <h2 className="text-4xl font-hand text-lime-900">
-                    {s.title}
-                  </h2>
-                  <ul className="flex flex-col items-center justify-center gap-2 text-xl">
-                    {s.contains.map((c) => (
-                      <li key={c}>{c}</li>
-                    ))}
-                  </ul>
-                  <p className="text-3xl">{s.price}</p>
+                <Link
+                  href={Routes.contacto + "?pack=" + s.title}
+                  className="flex flex-col gap-2 relative p-8 group h-full "
+                >
+                  <div className="px-8 font-hand flex flex-col justify-between h-full text-normal ">
+                    <header className="flex gap-1 flex-col justify-center">
+                      <h2 className="text-4xl font-hand text-lime-900 ">
+                        {s.title}
+                      </h2>
+                      <div className="bg-secondary-900 w-full h-1 rounded-full mx-auto" />
+                    </header>
+                    <ul className="flex flex-col items-center justify-center gap-2 text-xl px-8 font-light">
+                      {s.contains.map((c) => (
+                        <li key={c}>- {c}</li>
+                      ))}
+                    </ul>
+                    <p className="text-3xl">{s.price}</p>
 
-                  <Link
-                    href={Routes.contacto + "?pack=" + s.title}
-                    className="text-lime-800 rotate-6 text-2xl hover:scale-105 transition-all duration-300 ease-in-out py-6"
-                  >
-                    {ctaLabel}
-                  </Link>
-                </div>
+                    <span className="text-lime-900 text-xl md:text-3xl group-hover:scale-105 transition-all duration-300 ease-in-out py-3  ">
+                      {ctaLabel}
+                    </span>
+                  </div>
+                </Link>
               </div>
             </li>
           );

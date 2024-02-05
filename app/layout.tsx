@@ -11,7 +11,10 @@ const sans = Montserrat({
 });
 
 const greatFriend = localFont({
-  src: "fonts/DKMandarinWhispers.otf",
+  src: "fonts/Great-Friend.ttf",
+  // src: "fonts/Rayssa.ttf", <- Massa fina
+  // src: "fonts/ScribbleNote.otf",
+  // src: "fonts/MoonEarth.otf",
   weight: "400",
   style: "normal",
   variable: "--font-hand",

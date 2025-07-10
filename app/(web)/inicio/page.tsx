@@ -1,21 +1,20 @@
-import React from "react";
-import AutoCarrousel from "./components/AutoCarrousel";
 import Footer from "@/app/components/ui/footer/footer";
+import AutoCarrousel from "./components/AutoCarrousel";
 
 const HomePage = () => {
   return (
     <main className="flex flex-col gap-4 items-center ">
       <h1
-        className={`font-hand text-4xl md:text-7xl text-white mb-3 text-center`}
+        className={`font-hand text-4xl md:text-7xl text-white mb-3 text-center mt-10`}
       >
-        ¿Qué es N.atura Studio?
+        ¿Qué es Natura Studio?
       </h1>
       <p className="w-fit  text-center max-w-[800px]   text-xl text-light">
         Natura Studio empezo en 2019, cuando un amigo me planteó una pregunta
         que, más tarde, se convertiría en la pregunta:
       </p>
 
-      <h2 className={`font-hand text-5xl text-white my-8 max-w-xl text-center`}>
+      <h2 className={`font-hand text-5xl text-white my-8 max-w-xl text-center mt-20`}>
         ¿Qué harás con todo este talento que tienes escondido?
       </h2>
 
@@ -37,9 +36,9 @@ const HomePage = () => {
         <AutoCarrousel />
       </div>
 
-      <p>
-        {`Aunque mi abuelo las llamara "mala hierba" porque
-        pronto las cortaría para limpiar el jardín, para mí eran un tesoro. Sus
+      <p className="text-center max-w-3xl text-white">
+        Aunque mi abuelo las llamara "mala hierba" porque
+        pronto las cortaría para limpiar el jardín, para mí eran un tesoro. <br />Sus
         colores vibrantes brillaban intensamente al sol, creando los mejores
         recuerdos de aquellos momentos felices. Desde entonces, comencé a ver y
         valorar la naturaleza de manera diferente, convirtiéndose en un elemento
@@ -49,7 +48,7 @@ const HomePage = () => {
         La marca se convirtió en una extensión de mi conexión con la naturaleza
         y un medio para compartir esa conexión a través de mis imágenes
         congelando esos pequeños instantes vividos. Así empezó esta historia,
-        narrada en pequeños momentos de vida.`}
+        narrada en pequeños momentos de vida.
       </p>
 
       <Footer />

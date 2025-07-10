@@ -1,16 +1,13 @@
 "use client";
 
-import React from "react";
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+  CarouselItem
 } from "@/app/components/ui/carousel";
-import { TbStarFilled } from "react-icons/tb";
-import { Button } from "pol-ui";
 import { reviews } from "@/data/reviews";
+import Link from "next/link";
+import { TbStarFilled } from "react-icons/tb";
 
 const ReviewsCarrousel = () => {
   return (
@@ -25,46 +22,33 @@ const ReviewsCarrousel = () => {
             return (
               <CarouselItem
                 key={i}
-                className="max-w-[90vw] md:max-w-[70vw] xl:max-w-[50vw] mx-auto"
+                className="max-w-[70vw] md:max-w-[50vw] xl:max-w-[30vw]"
               >
-                <div className="bg-primary-200  h-full rounded-3xl p-6 justify-center flex flex-col items-stretch group">
-                  <div className="flex flex-col gap-2">
-                    <div className="flex justify-center gap-3 items-center">
-                      <h5 className="text-xl md:text-3xl">{review.name}</h5>
-                      <div className="flex gap-1 bg-primary/30 rounded-full p-1 w-fit justify-center">
+                <Link key={i} href={review.href} target="_blank" rel="noopener noreferrer">
+                  <div className="bg-primary-100/60 hover:bg-primary-100 transition-all cursor-pointer h-full rounded-3xl p-5 py-10 justify-center flex flex-col items-stretch group">
+                    <div className="flex flex-col gap-2 items-center justify-center">
+                      <strong className="text-xl md:text-2xl">{review.name}</strong>
+                      <div className="flex gap-1 rounded-full p-1 w-fit justify-center">
                         {Array(review.stars)
                           .fill(0)
                           .map((_, i) => (
-                            <span key={i} className="text-yellow-400">
+                            <span key={i} className="text-yellow-800">
                               <TbStarFilled />
                             </span>
                           ))}
                       </div>
+
+                      <p className="text-dark text-lg py-2 md:py-4 text-balance">
+                        {review.review}
+                      </p>
                     </div>
 
-                    <p className="text-dark text-lg py-2 md:py-4 text-balance">
-                      {review.review}
-                    </p>
                   </div>
-                  <footer className="flex justify-center ">
-                    <Button
-                      outline
-                      target="_blank"
-                      className="opacity-0 group-hover:opacity-100 transition-all duration-300 ease-in-out"
-                      rel="noopener noreferrer"
-                      // className="bg-primary-100 text-primary-800"
-                      href={review.href}
-                    >
-                      Ver más
-                    </Button>
-                  </footer>
-                </div>
+                </Link>
               </CarouselItem>
             );
           })}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
     </div>
   );

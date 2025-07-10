@@ -1,10 +1,10 @@
 "use client";
 import { Routes } from "@/constants/routes";
+import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
-import { motion } from "framer-motion";
 const NavLink = ({
   href,
   children,
@@ -77,11 +77,6 @@ _____________________________________________________
       name: "Sesiones",
       href: Routes.sesiones,
       hoverImage: "/media/subrallat/2.png",
-    },
-    {
-      name: "Diseño",
-      href: Routes.portfolio,
-      hoverImage: "/media/subrallat/3.png",
     },
     {
       name: "Sobre mi",

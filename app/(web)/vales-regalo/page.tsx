@@ -17,6 +17,7 @@ const vales = [
     image: "/media/sessions/familiar/2.jpg",
   },
 ];
+// de quien, para quien, observación
 
 const ValesRegaloPage = () => {
   return (

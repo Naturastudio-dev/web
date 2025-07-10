@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import { Button, Card, Datepicker, Input, Label, Select, Tabs } from "pol-ui";
 
 const ContactForm = () => {
@@ -54,6 +53,7 @@ const ContactForm = () => {
         </div>
         <div className="flex flex-col">
           <label htmlFor="date">¿Cuándo podría contactar con vosotros?</label>
+          <input type="date" />
           <Datepicker
             inline
             name="date"

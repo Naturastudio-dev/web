@@ -9,7 +9,7 @@ export function Providers({
   return (
     <PoluiProvider>
       <ParallaxProvider>
-        <div className="bg-secondary min-h-screen   text-dark  ">
+        <div className="bg-secondary min-h-screen text-dark">
           {children}
         </div>
       </ParallaxProvider>
